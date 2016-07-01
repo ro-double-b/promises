@@ -38,7 +38,44 @@ var generateRandomTokenAsync = function(callback) {
   });
 };
 
-var getGitHubProfileAsync; // TODO
+var getGitHubProfileAsync = function(user) {
+  return new Promise(function (resolve, reject) {
+    request.get('https://api.github.com/users/' + user, (err, res, body) => {
+      if (!err) {
+        console.log('resolving!!!!', body)
+        resolve(body)
+          .then((body));
+      } else {
+        console.log('errorrrrrrrrinnngnggggg', err)
+        reject(err);
+      }
+    });
+
+
+      // .catch(function() {
+
+      // });
+  //   return request.get(user) 
+  //     .then(function(gitHubUser) {
+  //       if (gitHubUser) {
+
+  //       } else {
+  //         return user
+  //       }
+  //     });
+  // });
+  });
+};
+// getGitHubProfileAsync.then(function(body) {
+//   console.log('testfl;askdjfal;sdf', body)
+// }, function(err) {
+//   console.log('a;sldfjkas;ldf', err)
+// })
+
+// function(string) {
+//  console.log('test')
+  // new Promise( function(resolve, reject) {
+  // });
 
 
 // (3) Asyncronous file manipulation
