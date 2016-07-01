@@ -31,7 +31,7 @@ var getGitHubProfileAsync; // TODO
 
 
 // (2) Asyncronous token generation
-var generateRandomToken = function(callback) {
+var generateRandomTokenAsync = function(callback) {
   crypto.randomBytes(20, function(err, buffer) {
     if (err) { return callback(err, null); }
     callback(null, buffer.toString('hex'));
