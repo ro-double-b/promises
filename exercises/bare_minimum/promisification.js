@@ -42,11 +42,11 @@ var getGitHubProfileAsync = function(user) {
   return new Promise(function (resolve, reject) {
     request.get('https://api.github.com/users/' + user, (err, res, body) => {
       if (!err) {
-        console.log('resolving!!!!', body)
+        console.log('resolving!!!!', body);
         resolve(body)
           .then((body));
       } else {
-        console.log('errorrrrrrrrinnngnggggg', err)
+        console.log('errorrrrrrrrinnngnggggg', err);
         reject(err);
       }
     });
